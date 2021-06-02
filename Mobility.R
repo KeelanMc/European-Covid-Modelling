@@ -9,15 +9,15 @@
 
 
 
-mobility = read.csv( "Original_data/Provided_data/Global_Mobility_Report.csv")
+#mobility = read.csv( "Original_data/Provided_data/Global_Mobility_Report.csv")
 countryfits = list.files("Output_data\\Rt_medians")
 countriestoplot = str_remove(countryfits,"Rt_medians.csv")
 
-Euromob = mobility[mobility$country_region %in% countriestoplot,] #restrict to our European countries
-Euromob  =Euromob[Euromob$sub_region_1=="",]  # restrict to nationial data
-Euromob = Euromob[c("country_region","date","transit_stations_percent_change_from_baseline","retail_and_recreation_percent_change_from_baseline","workplaces_percent_change_from_baseline","grocery_and_pharmacy_percent_change_from_baseline")]
-Euromob$date = as.Date(Euromob$date,format = "%Y-%m-%d")
-write.csv(Euromob,file = "Original_data/Additional_data/Google_mobility.csv",row.names=FALSE)
+#Euromob = mobility[mobility$country_region %in% countriestoplot,] #restrict to our European countries
+#Euromob  =Euromob[Euromob$sub_region_1=="",]  # restrict to nationial data
+#Euromob = Euromob[c("country_region","date","transit_stations_percent_change_from_baseline","retail_and_recreation_percent_change_from_baseline","workplaces_percent_change_from_baseline","grocery_and_pharmacy_percent_change_from_baseline")]
+#Euromob$date = as.Date(Euromob$date,format = "%Y-%m-%d")
+#write.csv(Euromob,file = "Original_data/Additional_data/Google_mobility.csv",row.names=FALSE)
 
 
 
